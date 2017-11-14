@@ -1,0 +1,10 @@
+export const FETCH_PEOPLE = 'fetch_people'
+export const RECEIVE_PEOPLE = 'receive_people'
+export const PEOPLE_ERROR = 'people_error'
+export const SORT_PEOPLE = 'sort_people'
+export const TOGGLE_ORDER = 'toggle_order'
+
+export const FETCH_PLANET = 'fetch_planet'
+export const DISPLAY_PLANET = 'display_planet'
+export const RECEIVE_PLANET = 'receive_planet'
+export const PLANET_ERROR = 'planet_error'

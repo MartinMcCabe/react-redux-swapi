@@ -1,0 +1,12 @@
+$footer-height: 20px;
+
+footer{
+  width: 100%;
+  height: $footer-height;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  line-height: $footer-height;
+  font-size: 10px;
+  background: $grey-75;
+}

@@ -1,0 +1,37 @@
+.table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 50px auto 0 auto;
+  border-spacing: 0;
+
+  &--th {
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    background: $grey;
+    color: $white;
+    cursor: pointer;
+    transition: color 0.4s;
+
+    &:hover {
+      color: $grey-dark;
+    }
+  }
+
+  &--tr {
+    margin: 0;
+    padding: 0;
+  }
+
+  &--td {
+    padding: 0 20px;
+    border-right: 1px solid $grey;
+    height: 25px;
+    line-height: 25px;
+
+    &:last-child{
+      border: none;
+      text-align: center;
+    }
+  }
+}

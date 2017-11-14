@@ -1,0 +1,11 @@
+$header-height: 50px;
+
+@import 'header/nav';
+
+header{
+
+  width: 100%;
+  height: $header-height;
+  background: $skyblue;
+  border-bottom: 1px solid $grey;
+}
