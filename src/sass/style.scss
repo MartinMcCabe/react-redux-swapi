@@ -3,6 +3,7 @@
 @import 'base';
 @import 'header';
 @import 'footer';
-@import 'popup/popup';
-@import 'table/table';
+@import 'components/popup';
+@import 'components/table';
 @import 'components/spinner';
+@import 'components/controls';

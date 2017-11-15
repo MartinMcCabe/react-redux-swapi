@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom'
 import {
   getPeopleIfNeeded,
   fetchPlanetInfo,
-  displayPlanetInfo
+  displayPlanetInfo,
+  getMorePeople
 } from '../actions/actionCreators'
 
 import Spinner from '../components/spinner'
 import PeopleTable from './peopleTable'
 import PlanetPopup from '../components/planetPopup'
+import Controls from '../components/controls'
 
 class PeoplePage extends Component {
   constructor(props){
@@ -30,6 +32,16 @@ class PeoplePage extends Component {
     this.props.dispatch(displayPlanetInfo(null))
   }
 
+  showNext() {
+    const { next } = this.props.people.data
+    this.props.dispatch( getMorePeople( next ))
+  }
+
+  showPrevious() {
+    const { previous } = this.props.people.data
+    this.props.dispatch( getMorePeople( previous ))
+  }
+
   render() {
 
     const { people, planets } = this.props
@@ -46,11 +58,14 @@ class PeoplePage extends Component {
       planetPopup = <PlanetPopup data={planetData} onClose={this.closePlanetPopup.bind(this)} />
     }
 
+    const controls = !people.is_fetching && people.data ? <Controls peopleData={people.data} onPrev={this.showPrevious.bind(this)} onNext={this.showNext.bind(this)} /> : null;
+
     return (
       <div>
         {spinner}
-        <div className='people'>
+        <div className='content'>
           {peopleTable}
+          {controls}
         </div>
         {planetPopup}
       </div>

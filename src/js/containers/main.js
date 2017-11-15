@@ -16,6 +16,7 @@ class Main extends Component {
               <li><NavLink to="/planets">Planets</NavLink></li>
             </ul>
           </nav> */}
+          <h1>Meet the People of Star Wars</h1>
         </header>
 
         { cloneElement( this.props.children, this.props ) }

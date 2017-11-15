@@ -8,13 +8,23 @@ const renderHeaders = (cols) => {
   });
 }
 
-const TableHeader = ({cols, onClick}) => (
+const TableHeader = ({cols, sort, onClick}) => (
   <tr>
     {
       cols.map((col, i)=> {
+        let classes;
         if(col.active){
+          if(sort.field == col.field){
+            if(sort.ascending){
+              classes = 'table--th sort ascending'
+            }else{
+              classes = 'table--th sort decending'
+            }
+          }else{
+            classes = 'table--th'
+          }
           return (
-            <th key={i} onClick={()=>{onClick(col.field)}} className='table--th'>{col.name}</th>
+            <th key={i} onClick={()=>{onClick(col.field)}} className={classes}>{col.name}</th>
           )
         }
     })

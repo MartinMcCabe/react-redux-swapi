@@ -58,6 +58,17 @@ export const getPeopleIfNeeded = () => {
   }
 }
 
+export const getMorePeople = (url) => {
+  return (dispatch, getState) => {
+    dispatch(fetchPeople())
+    fetchSwapiPeople(dispatch, url).then(data => {
+      if(data){
+        dispatch(receivePeople(data))
+      }
+    })
+  }
+}
+
 const fetchSwapiPeople = (dispatch, url = `https://swapi.co/api/people/`) => {
   return fetch(url)
     .then(

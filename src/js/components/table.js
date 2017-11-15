@@ -24,13 +24,13 @@ const renderTd = (row, col, index, onViewClick) => {
 }
 
 const Table = ({data, display_settings, onViewClick, onHeaderClick}) => {
-  const { cols } = display_settings
+  const { cols, sort } = display_settings
   const { results } = data
 
   return (
     <table className='table'>
       <tbody>
-        <TableHeader cols={cols} onClick={onHeaderClick}/>
+        <TableHeader cols={cols} sort={sort} onClick={onHeaderClick}/>
         {
           results.map((row, i) => (
             <tr key={i} className='table--tr'>
